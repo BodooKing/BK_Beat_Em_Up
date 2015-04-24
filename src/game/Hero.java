@@ -9,11 +9,11 @@ import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 
 public class Hero {
-    private String Name = "Player";
+    private String Name = "Player"; //TODO: show name in uppper left corner
     private String Source_NORMAL = "Hero_Normal_32x64.png";
     private String Source_DOWN = "Hero_Down_32x64";
     private String Source_UP = "Hero_Up_32x64";
-    private int Zustand = 0;
+    private int Zustand = 0; //2 = UP, 3=DOWN
     
 
 
@@ -26,7 +26,7 @@ public class Hero {
     public Hero() {
         
         
-        x = 40;
+        x = 40; //Startlocation
         y = 460;
     }
     public void move() {
@@ -46,17 +46,17 @@ public class Hero {
         switch(Zustand) {
             case 2:
                 ImageIcon Image_Up = new ImageIcon(this.getClass().getResource(Source_UP));
-                Image Look_Up = Image_Up.getImage();
+                Image Look_Up = Image_Up.getImage(); //Load Image an return
                 return Look_Up;
             
             case 3: 
                 ImageIcon Image_Down = new ImageIcon(this.getClass().getResource(Source_DOWN));
-                Image Look_Down = Image_Down.getImage();
+                Image Look_Down = Image_Down.getImage(); //Load Image an return
                 return Look_Down;
                 
             default: 
                 ImageIcon Image_Normal = new ImageIcon(this.getClass().getResource(Source_NORMAL));
-                Image Look_Normal = Image_Normal.getImage();
+                Image Look_Normal = Image_Normal.getImage(); //Load Image an return
                 return Look_Normal;
         }
         
@@ -86,7 +86,7 @@ public class Hero {
         }
     }
 
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(KeyEvent e) { //Return normal Statement
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_LEFT) {
