@@ -28,7 +28,7 @@ public class Board extends JPanel implements ActionListener{
         setBackground(Color.BLACK);
         setDoubleBuffered(true);
 
-        BodooKing = new Hero();
+        Player = new Hero();
 
         timer = new Timer(5, this);
         timer.start();
@@ -39,7 +39,7 @@ public class Board extends JPanel implements ActionListener{
         super.paint(g);
 
         Graphics2D g2d = (Graphics2D)g;
-        g2d.drawImage(BodooKing.getImage(), BodooKing.getX(), BodooKing.getY(), this);
+        g2d.drawImage(Player.getImage(), Player.getX(), Player.getY(), this);
 
         Toolkit.getDefaultToolkit().sync();
         g.dispose();
@@ -47,7 +47,7 @@ public class Board extends JPanel implements ActionListener{
 
 
     public void actionPerformed(ActionEvent e) {
-        BodooKing.move();
+        Player.move();
         repaint();  
     }
 
@@ -55,11 +55,11 @@ public class Board extends JPanel implements ActionListener{
     private class TAdapter extends KeyAdapter {
 
         public void keyReleased(KeyEvent e) {
-            BodooKing.keyReleased(e);
+            Player.keyReleased(e);
         }
 
         public void keyPressed(KeyEvent e) {
-            BodooKing.keyPressed(e);
+            Player.keyPressed(e);
         }
     }
 
