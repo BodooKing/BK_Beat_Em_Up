@@ -9,13 +9,11 @@ import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 
 public class Hero {
-    private String Name = "BodooKing";
+    private String Name = "Player";
     private String Source_NORMAL = "Hero_Normal_32x64.png";
     private String Source_DOWN = "Hero_Down_32x64";
     private String Source_UP = "Hero_Up_32x64";
     private int Zustand = 0;
-    //ImageIcon Hero_NORMAL = new ImageIcon(this.getClass().getResource(Source_NORMAL));
-        //Look = Hero_NORMAL.getImage();
     
 
 
