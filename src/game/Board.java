@@ -20,6 +20,7 @@ public class Board extends JPanel implements ActionListener{
 
     private Timer timer;
     private Hero BodooKing;
+    private Hero Player = new Hero();
 
     public Board() {
 
@@ -28,7 +29,6 @@ public class Board extends JPanel implements ActionListener{
         setBackground(Color.BLACK);
         setDoubleBuffered(true);
 
-        Player = new Hero();
 
         timer = new Timer(5, this);
         timer.start();
