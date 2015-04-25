@@ -19,7 +19,7 @@ import javax.swing.Timer;
 public class Board extends JPanel implements ActionListener{
 
     private Timer timer;
-    private Hero BodooKing;
+    private Hero Player;
 
     public Board() {
 
