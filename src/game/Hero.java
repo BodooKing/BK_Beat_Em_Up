@@ -10,9 +10,9 @@ import javax.swing.ImageIcon;
 
 public class Hero {
     private String Name = "Player"; //TODO: show name in uppper left corner
-    private String Source_NORMAL = "Hero_Normal_32x64.png";
-    private String Source_DOWN = "Hero_Down_32x64";
-    private String Source_UP = "Hero_Up_32x64";
+    private String Source_NORMAL = "/Images/Hero_Normal_32x64.png";
+    private String Source_DOWN = "/Images/Hero_Down_32x64.png";
+    private String Source_UP = "/Images/Hero_Up_32x64.png";
     private int Zustand = 0; //2 = UP, 3=DOWN
     
 
@@ -43,21 +43,28 @@ public class Hero {
     }
 
     public Image getImage() {
-        switch(Zustand) {
-            case 2:
-                ImageIcon Image_Up = new ImageIcon(this.getClass().getResource(Source_UP));
-                Image Look_Up = Image_Up.getImage(); //Load Image an return
-                return Look_Up;
-            
-            case 3: 
-                ImageIcon Image_Down = new ImageIcon(this.getClass().getResource(Source_DOWN));
-                Image Look_Down = Image_Down.getImage(); //Load Image an return
-                return Look_Down;
-                
-            default: 
-                ImageIcon Image_Normal = new ImageIcon(this.getClass().getResource(Source_NORMAL));
-                Image Look_Normal = Image_Normal.getImage(); //Load Image an return
-                return Look_Normal;
+        try {
+            switch(Zustand) {
+                case 2:
+                    ImageIcon Image_Up = new ImageIcon(this.getClass().getResource(Source_UP));
+                    Image Look_Up = Image_Up.getImage(); //Load Image an return
+                    return Look_Up;
+
+                case 3: 
+                    ImageIcon Image_Down = new ImageIcon(this.getClass().getResource(Source_DOWN));
+                    Image Look_Down = Image_Down.getImage(); //Load Image an return
+                    return Look_Down;
+
+                default: 
+                    ImageIcon Image_Normal = new ImageIcon(this.getClass().getResource(Source_NORMAL));
+                    Image Look_Normal = Image_Normal.getImage(); //Load Image an return
+                    return Look_Normal;
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return null;
         }
         
     }
